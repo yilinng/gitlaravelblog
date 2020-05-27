@@ -13,13 +13,7 @@
 </div>
 </header>
 
-<!-- Side navigation -->
-<div class="sidenav">
-  <h5>mostview </h5>
-  @foreach($mostview as $view)
-  <a href="{{ route('blogs.show', [$view->id])}}"><strong>{{$view->title}}</strong></a>
-  @endforeach
-</div>
+
 
 <!-- Page content -->
 <div class="main-content">
