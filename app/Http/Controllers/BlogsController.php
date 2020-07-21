@@ -34,7 +34,7 @@ class BlogsController extends Controller
         $oldestpost = Blog::oldest()->first()::paginate(5);
         //dd($oldestpost);
         //lastest post
-        $blogs =Blog::paginate(5);
+        $blogs =Blog::orderBy('created_at', 'desc')->paginate(5);
 
     	return view('blogs.index', compact('blogs','mostview', 'oldestpost'));
     }
@@ -81,7 +81,7 @@ class BlogsController extends Controller
 
         session()->flash('success', '刪除成功');
 
-    	 return Redirect::back();
+        return redirect('blogs');
     }
 
 
